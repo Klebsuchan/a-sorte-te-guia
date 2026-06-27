@@ -1,0 +1,6 @@
+{
+  "name": "Sorte Na Bet - Promo",
+  "description": "Landing page de alta conversão para plataforma de cassino e venda de e-book estratégico.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
