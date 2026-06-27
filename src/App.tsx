@@ -5,6 +5,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
 import { ShieldCheck, Zap, DollarSign, BookOpen, ChevronRight, CheckCircle2, Star, Trophy, ArrowRight, ChevronDown, Clock, Bitcoin, Lock, Lightbulb, X, PlayCircle, Users, MessageCircle } from 'lucide-react';
+import { EbookCheckoutModal } from './components/EbookCheckoutModal';
 
 const REF_LINK = "https://sortenabet.bet.br?ref=ce23ae7ac36e";
 
@@ -71,7 +72,13 @@ const faqs = [
   }
 ];
 
-function FAQItem({ question, answer }: { question: string, answer: string }) {
+interface FAQItemProps {
+  question: string;
+  answer: string;
+  key?: React.Key;
+}
+
+function FAQItem({ question, answer }: FAQItemProps) {
   const [isOpen, setIsOpen] = useState(false);
   
   return (
@@ -127,7 +134,7 @@ const testimonials = [
   }
 ];
 
-function FloatingTip() {
+function FloatingTip({ onOpenEbookModal }: { onOpenEbookModal: () => void }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -156,13 +163,12 @@ function FloatingTip() {
             <p className="text-sm text-gray-300 leading-relaxed mb-4">
               "Nunca tente recuperar perdas na mesma hora. Estabeleça um limite diário de stop-loss e respeite-o."
             </p>
-            <a 
-              href="#comprar-ebook"
-              onClick={() => setIsOpen(false)}
+            <button 
+              onClick={() => { setIsOpen(false); onOpenEbookModal(); }}
               className="block w-full py-2 bg-vibrant/10 hover:bg-vibrant/20 border border-vibrant/50 text-vibrant text-center font-bold text-sm rounded-lg transition-colors"
             >
               Ver Mais Dicas no E-book
-            </a>
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
@@ -325,6 +331,7 @@ function GamesShowcase() {
 export default function App() {
   const heroRef = useRef<HTMLElement>(null);
   const ebookRef = useRef<HTMLElement>(null);
+  const [isEbookModalOpen, setIsEbookModalOpen] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -343,7 +350,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-dark text-white font-sans selection:bg-vibrant selection:text-black overflow-x-hidden relative">
       
-      <FloatingTip />
+      <FloatingTip onOpenEbookModal={() => setIsEbookModalOpen(true)} />
 
       {/* Background Effects */}
       <div className="fixed inset-0 z-0 pointer-events-none">
@@ -653,14 +660,14 @@ export default function App() {
                   
                   <Countdown />
 
-                  <motion.a 
-                    href="#comprar-ebook" // Replace with actual ebook checkout link when ready
+                  <motion.button 
+                    onClick={() => setIsEbookModalOpen(true)}
                     animate={{ scale: [1, 1.03, 1] }}
                     transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                     className="group block w-full py-4 rounded-lg bg-vibrant text-white font-bold text-center text-lg hover:bg-[#8EE626] transition-colors shadow-[0_0_20px_rgba(127,195,35,0.1)] hover:shadow-[0_0_40px_rgba(127,195,35,0.3)]"
                   >
                     QUERO MEU E-BOOK AGORA
-                  </motion.a>
+                  </motion.button>
                   <p className="text-center text-xs text-gray-500 mt-4 uppercase tracking-wider">
                     Acesso imediato após a confirmação do pagamento.
                   </p>
@@ -776,6 +783,8 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      <EbookCheckoutModal isOpen={isEbookModalOpen} onClose={() => setIsEbookModalOpen(false)} />
     </div>
   );
 }
