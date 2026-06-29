@@ -4,7 +4,7 @@
  */
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
-import { ShieldCheck, Zap, DollarSign, BookOpen, ChevronRight, CheckCircle2, Star, Trophy, ArrowRight, ChevronDown, Clock, Bitcoin, Lock, Lightbulb, X, PlayCircle, Users, MessageCircle } from 'lucide-react';
+import { ShieldCheck, Zap, DollarSign, BookOpen, ChevronRight, CheckCircle2, Star, Trophy, ArrowRight, ChevronDown, Clock, Bitcoin, Lock, Lightbulb, X, PlayCircle, Users, MessageCircle, Download } from 'lucide-react';
 import { EbookCheckoutModal } from './components/EbookCheckoutModal';
 
 const REF_LINK = "https://sortenabet.bet.br?ref=ce23ae7ac36e";
@@ -502,9 +502,22 @@ export default function App() {
                 JOGAR E GANHAR AGORA
                 <ArrowRight className="w-7 h-7 group-hover:translate-x-2 transition-transform" />
               </a>
-              <div className="flex flex-col items-center justify-center sm:items-start text-center sm:text-left bg-dark/60 backdrop-blur-md border border-white/10 px-6 py-4 rounded-xl w-full sm:w-auto">
-                <span className="text-yellow-400 font-black text-xl">+300% de Bônus</span>
-                <span className="text-xs text-gray-300 uppercase tracking-widest font-semibold mt-1">no primeiro depósito</span>
+              <div className="flex flex-col gap-2 w-full sm:w-auto">
+                <div className="flex flex-col items-center justify-center sm:items-start text-center sm:text-left bg-dark/60 backdrop-blur-md border border-white/10 px-6 py-3 rounded-xl">
+                  <span className="text-yellow-400 font-black text-xl">+300% de Bônus</span>
+                  <span className="text-xs text-gray-300 uppercase tracking-widest font-semibold mt-1">no primeiro depósito</span>
+                </div>
+                <a 
+                  href="/gestao-emocional.pdf"
+                  download="Gestao_Emocional.pdf"
+                  className="flex items-center gap-3 bg-vibrant/10 border border-vibrant/30 hover:bg-vibrant/20 px-4 py-2 rounded-xl transition-colors cursor-pointer"
+                >
+                  <Download className="w-5 h-5 text-vibrant" />
+                  <div className="flex flex-col text-left">
+                    <span className="text-[10px] text-vibrant font-bold uppercase tracking-widest">Baixar Bônus</span>
+                    <span className="text-xs font-semibold text-white">E-book Gestão Emocional</span>
+                  </div>
+                </a>
               </div>
             </motion.div>
           </motion.div>
@@ -751,15 +764,28 @@ export default function App() {
           <div className="max-w-4xl mx-auto text-center px-4">
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-6 tracking-tighter uppercase leading-[0.9]">Pronto para a sua <br className="hidden sm:block"/><span className="text-vibrant">próxima grande vitória?</span></h2>
             <p className="text-lg sm:text-xl text-gray-400 mb-8 md:mb-10">O bônus de primeiro depósito está te esperando. Cadastre-se em segundos.</p>
-            <a 
-              href={REF_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 px-8 md:px-10 py-4 md:py-5 rounded-lg bg-vibrant text-white font-bold text-lg md:text-xl hover:shadow-[0_0_40px_rgba(127,195,35,0.3)] transition-all hover:scale-105 group w-full sm:w-auto"
-            >
-              CRIAR MINHA CONTA GRÁTIS
-              <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a 
+                href={REF_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 px-8 md:px-10 py-4 md:py-5 rounded-lg bg-vibrant text-white font-bold text-lg md:text-xl hover:shadow-[0_0_40px_rgba(127,195,35,0.3)] transition-all hover:scale-105 group w-full sm:w-auto"
+              >
+                CRIAR MINHA CONTA GRÁTIS
+                <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a 
+                href="/gestao-emocional.pdf"
+                download="Gestao_Emocional.pdf"
+                className="inline-flex items-center justify-center gap-3 px-6 md:px-8 py-4 md:py-5 rounded-lg bg-vibrant/10 border border-vibrant/30 hover:bg-vibrant/20 transition-all group w-full sm:w-auto cursor-pointer"
+              >
+                <Download className="w-6 h-6 text-vibrant" />
+                <div className="flex flex-col text-left">
+                  <span className="text-[10px] text-vibrant font-bold uppercase tracking-widest">Baixar Bônus</span>
+                  <span className="text-sm font-bold text-white">E-book Gestão Emocional</span>
+                </div>
+              </a>
+            </div>
           </div>
         </section>
 
