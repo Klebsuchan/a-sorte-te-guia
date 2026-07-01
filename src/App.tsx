@@ -137,6 +137,9 @@ const testimonials = [
 function FloatingTip({ onOpenEbookModal }: { onOpenEbookModal: () => void }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Currently hidden as e-book is being created
+  if (true) return null;
+
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
       <AnimatePresence>
@@ -618,8 +621,8 @@ export default function App() {
 
         <GamesShowcase />
 
-        {/* E-book Upsell Section */}
-        <section id="comprar-ebook" ref={ebookRef} className="py-24 px-4 relative overflow-hidden">
+        {/* E-book Upsell Section (Currently Hidden) */}
+        <section id="comprar-ebook" ref={ebookRef} className="hidden py-24 px-4 relative overflow-hidden">
           {/* Decorative elements */}
           <motion.div 
             animate={{ opacity: [0.3, 0.6, 0.3] }}
@@ -681,6 +684,14 @@ export default function App() {
                   >
                     QUERO MEU E-BOOK AGORA
                   </motion.button>
+                  <a 
+                    href={REF_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full py-3 mt-3 rounded-lg border border-white/20 text-gray-400 font-bold text-center text-sm hover:bg-white/5 hover:text-white transition-colors"
+                  >
+                    NÃO QUERO MEU E-BOOK AGORA
+                  </a>
                   <p className="text-center text-xs text-gray-500 mt-4 uppercase tracking-wider">
                     Acesso imediato após a confirmação do pagamento.
                   </p>
