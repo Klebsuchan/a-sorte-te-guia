@@ -137,9 +137,7 @@ const testimonials = [
 function FloatingTip({ onOpenEbookModal }: { onOpenEbookModal: () => void }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Currently hidden as e-book is being created
-  if (true) return null;
-
+  // Removed the hide logic so the tip shows again
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
       <AnimatePresence>
@@ -166,12 +164,15 @@ function FloatingTip({ onOpenEbookModal }: { onOpenEbookModal: () => void }) {
             <p className="text-sm text-gray-300 leading-relaxed mb-4">
               "Nunca tente recuperar perdas na mesma hora. Estabeleça um limite diário de stop-loss e respeite-o."
             </p>
-            <button 
-              onClick={() => { setIsOpen(false); onOpenEbookModal(); }}
+            <a 
+              href="https://go.hotmart.com/P106573668E"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
               className="block w-full py-2 bg-vibrant/10 hover:bg-vibrant/20 border border-vibrant/50 text-vibrant text-center font-bold text-sm rounded-lg transition-colors"
             >
               Ver Mais Dicas no E-book
-            </button>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
@@ -621,8 +622,8 @@ export default function App() {
 
         <GamesShowcase />
 
-        {/* E-book Upsell Section (Currently Hidden) */}
-        <section id="comprar-ebook" ref={ebookRef} className="hidden py-24 px-4 relative overflow-hidden">
+        {/* E-book Upsell Section */}
+        <section id="comprar-ebook" ref={ebookRef} className="py-24 px-4 relative overflow-hidden">
           {/* Decorative elements */}
           <motion.div 
             animate={{ opacity: [0.3, 0.6, 0.3] }}
@@ -671,27 +672,21 @@ export default function App() {
                 <div className="pt-6 border-t border-white/10">
                   <div className="flex items-end gap-4 mb-6">
                     <span className="text-gray-500 line-through text-base md:text-lg italic">R$ 97,00</span>
-                    <span className="text-3xl md:text-4xl font-black text-vibrant">R$ 27,90</span>
+                    <span className="text-3xl md:text-4xl font-black text-vibrant">R$ 29,99</span>
                   </div>
                   
                   <Countdown />
 
-                  <motion.button 
-                    onClick={() => setIsEbookModalOpen(true)}
+                  <motion.a 
+                    href="https://go.hotmart.com/P106573668E"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     animate={{ scale: [1, 1.03, 1] }}
                     transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                     className="group block w-full py-4 rounded-lg bg-vibrant text-white font-bold text-center text-lg hover:bg-[#8EE626] transition-colors shadow-[0_0_20px_rgba(127,195,35,0.1)] hover:shadow-[0_0_40px_rgba(127,195,35,0.3)]"
                   >
                     QUERO MEU E-BOOK AGORA
-                  </motion.button>
-                  <a 
-                    href={REF_LINK}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full py-3 mt-3 rounded-lg border border-white/20 text-gray-400 font-bold text-center text-sm hover:bg-white/5 hover:text-white transition-colors"
-                  >
-                    NÃO QUERO MEU E-BOOK AGORA
-                  </a>
+                  </motion.a>
                   <p className="text-center text-xs text-gray-500 mt-4 uppercase tracking-wider">
                     Acesso imediato após a confirmação do pagamento.
                   </p>
