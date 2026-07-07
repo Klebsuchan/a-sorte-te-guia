@@ -288,7 +288,7 @@ function GamesShowcase() {
               whileHover={{ y: -10 }}
               className="group relative h-72 rounded-2xl overflow-hidden cursor-pointer shadow-xl border border-white/10 block"
             >
-              <img src={game.image} alt={game.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700" />
+              <img src={game.image} alt={game.name} loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent" />
               <div className={`absolute inset-0 bg-gradient-to-t ${game.color}/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               
@@ -416,6 +416,7 @@ export default function App() {
               loop 
               muted 
               playsInline 
+              preload="auto"
               className="w-full h-full object-cover opacity-90 object-right"
             >
               <source src="/hero-video.mp4" type="video/mp4" />
@@ -641,7 +642,7 @@ export default function App() {
                 style={{ y: useTransform(ebookScrollYProgress, [0, 1], [50, -50]) }}
                 className="flex-1 w-full relative group flex justify-center"
               >
-                <img src="/capa-ebook.png" alt="O Código da Sorte E-book" className="w-full max-w-[340px] drop-shadow-[0_20px_50px_rgba(127,195,35,0.4)] group-hover:scale-105 transition-transform duration-500 rounded-2xl" />
+                <img src="/capa-ebook.png" alt="O Código da Sorte E-book" loading="lazy" className="w-full max-w-[340px] drop-shadow-[0_20px_50px_rgba(127,195,35,0.4)] group-hover:scale-105 transition-transform duration-500 rounded-2xl" />
               </motion.div>
 
               <div className="flex-1 space-y-6 z-10">
@@ -751,7 +752,7 @@ export default function App() {
                     "{item.text}"
                   </p>
                   <div className="flex items-center gap-4 mt-auto justify-center md:justify-start">
-                    <img src={item.image} alt={item.name} className="w-14 h-14 rounded-full border-2 border-vibrant/50 object-cover" />
+                    <img src={item.image} alt={item.name} loading="lazy" className="w-14 h-14 rounded-full border-2 border-vibrant/50 object-cover" />
                     <div className="text-left">
                       <h4 className="text-white font-bold">{item.name}</h4>
                       <span className="text-vibrant text-sm font-semibold">{item.role}</span>
