@@ -499,16 +499,16 @@ export default function App() {
               className="flex flex-col gap-4 w-full sm:w-auto max-w-2xl"
             >
               <a 
-                href={`https://wa.me/5554991628410?text=${encodeURIComponent("Olá! Quero meu E-book bônus, conhecer o site e liberar meu bônus de 300% com Suporte VIP.")}`}
+                href="https://chat.whatsapp.com/ED2Lf0ynbeCIaDaES6YWlm?s=cl&p=a&ilr=0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative px-6 md:px-8 py-4 w-full bg-[#25D366] text-white text-base md:text-xl font-bold rounded-xl hover:shadow-[0_0_50px_rgba(37,211,102,0.4)] hover:bg-[#20bd5a] flex flex-col items-center justify-center gap-2 transition-all border border-[#20bd5a]"
               >
                 <div className="flex items-center gap-3">
                   <MessageCircle className="w-8 h-8 animate-bounce" />
-                  <span className="text-center">LIBERAR MEU E-BOOK E ACESSO VIP (WHATSAPP)</span>
+                  <span className="text-center">ENTRAR NO GRUPO VIP DO WHATSAPP</span>
                 </div>
-                <span className="text-xs md:text-sm font-semibold text-[#c4f8d6] bg-black/20 px-4 py-1 rounded-full uppercase tracking-wider">Passo 1: Fale conosco e ganhe seu bônus</span>
+                <span className="text-xs md:text-sm font-semibold text-[#c4f8d6] bg-black/20 px-4 py-1 rounded-full uppercase tracking-wider">Passo 1: Entre no grupo para liberar seu e-book e bônus</span>
               </a>
 
               <div className="flex flex-col sm:flex-row items-center sm:items-stretch gap-4 w-full">
@@ -775,16 +775,16 @@ export default function App() {
             <p className="text-lg sm:text-xl text-gray-400 mb-8 md:mb-10">O bônus de primeiro depósito está te esperando. Cadastre-se em segundos.</p>
             <div className="flex flex-col gap-4 max-w-2xl mx-auto">
               <a 
-                href={`https://wa.me/5554991628410?text=${encodeURIComponent("Olá! Quero meu E-book bônus, conhecer o site e liberar meu bônus de 300% com Suporte VIP.")}`}
+                href="https://chat.whatsapp.com/ED2Lf0ynbeCIaDaES6YWlm?s=cl&p=a&ilr=0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative px-6 py-4 w-full bg-[#25D366] text-white text-base md:text-xl font-bold rounded-xl hover:shadow-[0_0_50px_rgba(37,211,102,0.4)] hover:bg-[#20bd5a] flex flex-col items-center justify-center gap-2 transition-all border border-[#20bd5a]"
               >
                 <div className="flex items-center gap-3">
                   <MessageCircle className="w-8 h-8 animate-bounce" />
-                  <span className="text-center">LIBERAR MEU E-BOOK E ACESSO VIP (WHATSAPP)</span>
+                  <span className="text-center">ENTRAR NO GRUPO VIP DO WHATSAPP</span>
                 </div>
-                <span className="text-xs md:text-sm font-semibold text-[#c4f8d6] bg-black/20 px-4 py-1 rounded-full uppercase tracking-wider">Passo 1: Fale conosco e ganhe seu bônus</span>
+                <span className="text-xs md:text-sm font-semibold text-[#c4f8d6] bg-black/20 px-4 py-1 rounded-full uppercase tracking-wider">Passo 1: Entre no grupo para liberar seu e-book e bônus</span>
               </a>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
